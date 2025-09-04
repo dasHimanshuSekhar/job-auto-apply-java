@@ -1,0 +1,57 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: job-auto-apply
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/job_auto_apply
+    username: sandbox
+    password: 8mStN4KNJrma1J0vrSeqoTDk
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# JWT Configuration
+jwt:
+  secret: himanshu-job-auto-apply-secret-key-2024
+  expiration: 86400000 # 24 hours
+
+# Job Scraping Configuration
+job-scraper:
+  enabled: true
+  schedule: "0 0 9 * * ?" # Daily at 9 AM
+  max-applications-per-day: 10
+  min-skill-match: 80.0
+
+# Logging
+logging:
+  level:
+    com.himanshu.jobautoapply: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/job-auto-apply.log
+
+# CORS Configuration
+cors:
+  allowed-origins: "http://localhost:3000,https://job-auto-apply.lindy.site"
+  allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+  allowed-headers: "*"
