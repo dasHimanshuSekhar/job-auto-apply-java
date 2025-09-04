@@ -6,6 +6,24 @@
 - **Frontend**: [https://job-auto-apply.lindy.site](https://job-auto-apply.lindy.site)
 - **Backend API**: [https://job-auto-apply-api.lindy.site](https://job-auto-apply-api.lindy.site)
 
+## 📁 Project Structure
+
+```
+job-auto-apply-java/
+├── backend/                      # Java Spring Boot API
+│   ├── src/main/java/           # Java source code
+│   ├── src/main/resources/      # Configuration files
+│   ├── pom.xml                  # Maven dependencies
+│   └── README.md                # Backend documentation
+├── frontend/                    # React TypeScript UI
+│   ├── src/components/          # React components
+│   ├── src/services/            # API integration
+│   ├── package.json             # Node dependencies
+│   └── public/                  # Static assets
+├── README.md                    # This file
+└── SETUP.md                     # Setup instructions
+```
+
 ## 🎯 Key Features
 
 ### ✅ Resume Processing
@@ -41,20 +59,20 @@
 
 ## 🏗️ Technology Stack
 
-### Backend (Java Spring Boot)
+### Backend (`/backend`)
 - **Java 17** with Spring Boot 3.x
 - **PostgreSQL** database with JPA/Hibernate
 - **Apache PDFBox** for PDF resume parsing
 - **Maven** for dependency management
 - RESTful API architecture
 
-### Frontend (React TypeScript)
+### Frontend (`/frontend`)
 - **React 18** with TypeScript
 - **Custom CSS** with modern responsive design
 - **Axios** for API communication
 - Component-based architecture
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
 - Java 17 or higher
@@ -64,12 +82,10 @@
 
 ### Backend Setup
 ```bash
-# Clone the repository
-git clone https://github.com/dasHimanshuSekhar/job-auto-apply-java.git
-cd job-auto-apply-java
+cd backend
 
-# Configure database in application.properties
-# Update src/main/resources/application.properties with your DB credentials
+# Configure database in application.yml
+# Update src/main/resources/application.yml with your DB credentials
 
 # Run the Spring Boot application
 ./mvnw spring-boot:run
@@ -77,7 +93,6 @@ cd job-auto-apply-java
 
 ### Frontend Setup
 ```bash
-# Navigate to frontend directory
 cd frontend
 
 # Install dependencies
@@ -90,15 +105,6 @@ npm start
 The application will be available at:
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:8080
-
-## 📊 Database Schema
-
-### Core Entities
-- **User**: User profiles and authentication
-- **Resume**: Parsed resume data with extracted skills
-- **JobListing**: Job postings from various platforms
-- **JobApplication**: Application tracking and status management
-- **UserPreferences**: User settings and automation preferences
 
 ## 🔄 Application Workflow
 
@@ -115,6 +121,15 @@ The application will be available at:
 - **Interactive Components**: Smooth transitions and real-time feedback
 - **Progress Tracking**: Visual indicators for uploads and applications
 - **Dashboard Analytics**: Comprehensive statistics and insights
+
+## 📊 Database Schema
+
+### Core Entities
+- **User**: User profiles and authentication
+- **Resume**: Parsed resume data with extracted skills
+- **JobListing**: Job postings from various platforms
+- **JobApplication**: Application tracking and status management
+- **UserPreferences**: User settings and automation preferences
 
 ## 📈 Future Enhancements
 
